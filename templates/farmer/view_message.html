@@ -1,0 +1,91 @@
+ {% extends 'farmer/farmer_base.html' %}
+{% load static %}
+{% block content %}
+
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+<!--						<p>Get 24/7 Support</p>-->
+						<h1>View Message </h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+        <div class="container">
+<!--            <div class="row">-->
+<!--                <div class="col-12">-->
+<!--                    <nav aria-label="breadcrumb">-->
+<!--                        <ol class="breadcrumb">-->
+<!--                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>-->
+<!--                            <li class="breadcrumb-item active" aria-current="page">Payment</li>-->
+<!--                        </ol>-->
+<!--                    </nav>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+
+
+ <table class="table table-bordered table-striped table-hover" style="background-color: #002633;margin-top:50px">
+                                   <th class="success" style="color: white;">Customer Name</th>
+
+                                 <th class="success" style="color: white;">Product Name</th>
+
+                                 <th class="success" style="color: white;">Message</th>
+
+                                 <th class="success" style="color: white;">Send Reply</th>
+
+
+     {% for i in view_pr  %}
+
+                                <tr style="background-color:white;width: 700px;">
+                                       <td>{{i.user.first_name}}</td>
+
+                                    <td>{{ i.product.name }}</td>
+                                                                            <td>{{ i.message}}</td>
+
+
+<form action="#" method="post">
+        {% csrf_token %}
+
+    <td><textarea name="reply" placeholder="reply" > </textarea>
+        <input type="hidden" name="id" value="{{ i.id }}"><button type="submit" class=" btn btn-success">Send</button></td></form>
+
+
+
+
+
+
+
+                                </tr>
+
+
+              {% endfor %}
+
+
+
+                            </table>
+
+      <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+
+  {% endblock %}

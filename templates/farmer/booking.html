@@ -1,0 +1,83 @@
+{% extends 'farmer/farmer_base.html' %}
+{% load static %}
+{% block content %}
+
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+<!--						<p>Get 24/7 Support</p>-->
+						<h1>Booking Details </h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+        <div class="container">
+<!--            <div class="row">-->
+<!--                <div class="col-12">-->
+<!--                    <nav aria-label="breadcrumb">-->
+<!--                        <ol class="breadcrumb">-->
+<!--                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>-->
+<!--                            <li class="breadcrumb-item active" aria-current="page">Payment</li>-->
+<!--                        </ol>-->
+<!--                    </nav>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+
+ <table class="table table-bordered table-striped table-hover" style="background-color: #002633;margin-top:50px">
+
+                                 <th class="success" style="color: white;">Farmer Name</th>
+
+                                 <th class="success" style="color: white;">Product Name</th>
+                                       <th class="success" style="color: white;">Actual price</th>
+
+                                       <th class="success" style="color: white;">My price</th>
+                                            <th class="success" style="color: white;">Message</th>
+
+                                  <th class="success" style="color: white;">Payment</th>
+
+     {% for i in feed  %}
+                                <tr style="background-color:white;width: 700px;">
+
+                                    <td>{{ i.farmer.user.first_name }}</td>
+
+                                    <td>{{ i.product_name }}</td>
+
+
+                                      <td>{{ i.price }}</td>
+                                    <td>{{ i.Auction_price }}</td>
+
+                                    <td>{{ i.message }}</td>
+                                    <td>{{ i.payment }}</td>
+                                </tr>
+
+
+              {% endfor %}
+
+
+
+                            </table>
+      <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+
+  {% endblock %}

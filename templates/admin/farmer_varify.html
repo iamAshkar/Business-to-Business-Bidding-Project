@@ -1,0 +1,87 @@
+ {% extends 'admin/admin_base.html' %}
+{% load static %}
+{% block content %}
+
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+<!--						<p>Get 24/7 Support</p>-->
+						<h1>Framer verify </h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+        <div class="container">
+<!--            <div class="row">-->
+<!--                <div class="col-12">-->
+<!--                    <nav aria-label="breadcrumb">-->
+<!--                        <ol class="breadcrumb">-->
+<!--                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>-->
+<!--                            <li class="breadcrumb-item active" aria-current="page">Payment</li>-->
+<!--                        </ol>-->
+<!--                    </nav>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+
+ <table class="table table-bordered table-striped table-hover" style="background-color: #002633;margin-top:50px">
+<th></th>
+                                 <th class="success" style="color: white;">Farmer Name</th>
+                                      <th class="success" style="color: white;">Phone number </th>
+
+                                 <th class="success" style="color: white;">Email</th>
+
+                                 <th class="success" style="color: white;">Adress</th>
+                                       <th class="success" style="color: white;">Approve</th>
+                                  <th class="success" style="color: white;">Reject</th>
+     <th></th>
+
+     {% for i in shop  %}
+
+                                <tr style="background-color:white;width: 700px;">
+                                       <td></td>
+
+                                    <td>{{ i.user.first_name }}</td>
+                                                                            <td>{{ i.phonenumber}}</td>
+
+                                    <td>{{ i.user.email }}</td>
+
+
+                                      <td>{{ i.address }}</td>
+
+<td><a href="approve?id={{ i.user_id}}" class=" btn btn-success">Approve</a></td>
+    <td><a href="reject?id={{ i.user_id}}" class=" btn btn-danger">Reject</a></td>
+<td></td>
+                                </tr>
+
+
+              {% endfor %}
+
+
+
+                            </table>
+
+      <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+
+  {% endblock %}

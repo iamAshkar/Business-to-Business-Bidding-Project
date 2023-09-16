@@ -1,0 +1,89 @@
+{% extends 'user/user_base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<section class="p-4 p-md-5" style="background-image: url('{% static 'images/bg_2.jpg' %}');" data-stellar-background-ratio="0.5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-5">
+          <div class="card rounded-3">
+            <div class="card-body p-4">
+              <div class="text-center mb-4">
+                {% comment %} <p>Total Amount = <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16"> {% endcomment %}
+                    {% comment %} <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z"/> {% endcomment %}
+                  {% comment %} </svg>{{ch.Auction_price}}/-</p>			 {% endcomment %}
+               <br>
+               <br>
+                <h1><b>PAYMENT</b></h1>
+              </div>
+              <form action="Make_Payment" method="post">
+                {% csrf_token %}
+
+                  <img class="img-fluid" src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />
+                
+                  <img class="img-fluid" src="https://img.icons8.com/color/48/000000/visa.png" />
+
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm3"
+                      checked />
+                    <label class="form-check-label" for="checkoutForm3">
+                      Credit card
+                    </label>
+                  </div>
+      
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm4" />
+                    <label class="form-check-label" for="checkoutForm4">
+                      Debit card
+                    </label>
+                  </div>
+      
+                  <div class="form-check mb-4">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm5" />
+                    <label class="form-check-label" for="checkoutForm5">
+                      Paypal
+                    </label>
+                  </div>
+      
+    
+                <div class="form-outline mb-4">
+                  <input type="text" id="formControlLgXsd" class="form-control form-control-lg"  required=""/>
+                  <label class="form-label" for="formControlLgXsd">Cardholder's Name</label>
+                </div>
+    
+                <div class="row mb-4">
+                  <div class="col-7">
+                    <div class="form-outline">
+                      <input type="text" id="formControlLgXM" class="form-control form-control-lg" required="" pattern="[0-9]{16}"/>
+                      <label class="form-label" for="formControlLgXM">Card Number</label>
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <div class="form-outline">
+                      <input type="text" id="formControlLgExpk" class="form-control form-control-lg"  required="" pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$"/>
+                      <label class="form-label" for="formControlLgExpk">Expire</label>
+                    </div>
+                  </div>
+
+                  <div class="col-2">
+                    <div class="form-outline">
+                      <input type="password" id="formControlLgcvv" class="form-control form-control-lg" required="" pattern="[0-9]{3}"/>
+                      <label class="form-label" for="formControlLgcvv">CVV</label>
+                    </div>
+                  </div>
+                </div>
+    
+                <button type="Submit" class="btn btn-success btn-lg btn-block">Make Payment</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+
+
+  {% endblock %}

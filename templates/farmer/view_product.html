@@ -1,0 +1,93 @@
+ {% extends 'farmer/farmer_base.html' %}
+{% load static %}
+{% block content %}
+
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+<!--						<p>Get 24/7 Support</p>-->
+						<h1>View products </h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+        <div class="container">
+<!--            <div class="row">-->
+<!--                <div class="col-12">-->
+<!--                    <nav aria-label="breadcrumb">-->
+<!--                        <ol class="breadcrumb">-->
+<!--                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>-->
+<!--                            <li class="breadcrumb-item active" aria-current="page">Payment</li>-->
+<!--                        </ol>-->
+<!--                    </nav>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+
+
+ <table class="table table-bordered table-striped table-hover" style="background-color: #002633;margin-top:50px">
+<th></th>
+                                 <th class="success" style="color: white;">Product Name</th>
+                                      <th class="success" style="color: white;">Kilo Gram </th>
+
+                                 <th class="success" style="color: white;">Total Price</th>
+
+                                 <th class="success" style="color: white;">Auction Date</th>
+                                       <th class="success" style="color: white;">Delivery Date</th>
+                                  <th class="success" style="color: white;">Delete</th>
+     <th></th>
+
+     {% for i in view_pr  %}
+
+                                <tr style="background-color:white;width: 700px;">
+                                       <td></td>
+
+                                    <td>{{ i.name }}</td>
+                                                                            <td>{{ i.quantity}}</td>
+
+                                    <td>{{ i.price }}</td>
+
+
+                                      <td>{{ i.auction_date }}</td>
+
+                                    <td>{{ i.delivery_date }}</td>
+
+
+                                <td><a href="delete?id={{ i.id}}" class=" btn btn-danger">Delete</a></td>
+
+<td></td>
+
+
+                                </tr>
+
+
+              {% endfor %}
+
+
+
+                            </table>
+
+      <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+
+  {% endblock %}

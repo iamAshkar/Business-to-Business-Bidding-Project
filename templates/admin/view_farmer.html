@@ -1,0 +1,93 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+{% block content %}
+
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+<!--						<p>Get 24/7 Support</p>-->
+						<h1>View farmer </h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+        <div class="container">
+<!--            <div class="row">-->
+<!--                <div class="col-12">-->
+<!--                    <nav aria-label="breadcrumb">-->
+<!--                        <ol class="breadcrumb">-->
+<!--                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>-->
+<!--                            <li class="breadcrumb-item active" aria-current="page">Payment</li>-->
+<!--                        </ol>-->
+<!--                    </nav>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+
+
+ <table class="table table-bordered table-striped table-hover" style="background-color: #002633;margin-top:50px">
+                                   <th class="success" style="color: white;"> Name</th>
+
+                                 <th class="success" style="color: white;">Email</th>
+
+                                 <th class="success" style="color: white;">Mobile no</th>
+
+                                 <th class="success" style="color: white;">Address</th>
+
+                                 <th class="success" style="color: white;">Delete</th>
+
+
+
+     {% for i in f  %}
+     
+
+                                <tr style="background-color:white;width: 700px;">
+                                       <td>{{i.user.first_name}}</td>
+
+                                    <td>{{ i.user.username }}</td>
+                                    <td>{{ i.phonenumber }}</td>
+                                     <td>{{ i.address}}</td>
+                                     <td><a href="Delete_farmer?id={{ i.id}}" class=" btn btn-danger">Delete</a></td>
+
+
+
+
+
+
+
+
+
+
+                                </tr>
+
+
+              {% endfor %}
+
+
+
+                            </table>
+
+      <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+
+  {% endblock %}

@@ -1,0 +1,64 @@
+ {% extends 'user/user_base.html' %}
+{% load static %}
+{% block content %}
+        {% if message %}
+<script>
+alert("{{ message }}")
+</script>
+    {% endif %}
+	<!-- end search arewa -->
+	
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>See more Details</p>
+						<h1>Auction Details</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- single product -->
+	<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="single-product-img">
+						<img src="{{ single_view.image.url }}" alt="">
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div class="single-product-content">
+						<h3>{{ single_view.name }}</h3>
+						<p class="single-product-pricing"><span>{{ single_view.quantity }} Kg</span>Price: ₹{{ single_view.price }}</p>
+						<p>{{ single_view.desc }}</p>
+<!--						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.</p>-->
+						<div class="single-product-form">
+								<p><strong>Auction Date: </strong>{{ single_view.auction_date }}</p>
+							<p><strong>Delivery_date: </strong>{{ single_view.delivery_date }}</p>
+							<form action="Add_Action" method="post">
+								{% csrf_token %}
+										<input type="hidden" name="id" value="{{ single_view.id }}" class="span1" placeholder=""/>
+								  <input type="hidden" name="id2" value="{{ single_view.name }}" class="span1" placeholder=""/>
+
+								Auction Price:<input type="number" name="price" placeholder="0" required>
+                                 <input type="submit" value="Submit">
+							</form>
+							<a href="Send_message?id={{ single_view.id}}"><input type="submit" value="Chat With Farmer"></a>
+
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end single product -->
+	<!-- footer -->
+{% endblock %}

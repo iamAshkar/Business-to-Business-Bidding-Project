@@ -1,0 +1,96 @@
+ {% extends 'farmer/farmer_base.html' %}
+{% load static %}
+{% block content %}
+
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+<!--						<p>Get 24/7 Support</p>-->
+						<h1>Fixed Auction</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+        <div class="container">
+<!--            <div class="row">-->
+<!--                <div class="col-12">-->
+<!--                    <nav aria-label="breadcrumb">-->
+<!--                        <ol class="breadcrumb">-->
+<!--                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>-->
+<!--                            <li class="breadcrumb-item active" aria-current="page">Payment</li>-->
+<!--                        </ol>-->
+<!--                    </nav>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+
+
+ <table class="table table-bordered table-striped table-hover" style="background-color: #002633;margin-top:50px">
+<th></th>
+                                 <th class="success" style="color: white;">Customer_name</th>
+                                      <th class="success" style="color: white;">Address</th>
+
+                                 <th class="success" style="color: white;">Email</th>
+
+                                 <th class="success" style="color: white;">Phone Number</th>
+                                            <th class="success" style="color: white;">Product Name</th>
+                                            <th class="success" style="color: white;">Price Name</th>
+                                            <th class="success" style="color: white;">Delivery Date</th>
+
+
+     <th></th>
+
+     {% for i in view_pr  %}
+
+                                <tr style="background-color:white;width: 700px;">
+                                       <td></td>
+
+                                    <td>{{ i.customer.user.first_name }}</td>
+                                                                            <td>{{ i.customer.address}}</td>
+                                                                            <td>{{ i.customer.user.email}}</td>
+                                                                            <td>{{ i.customer.phonenumber}}</td>
+
+                                    <td>{{ i.product_name }}</td>
+
+                                      <td>{{ i.price }}</td>
+                                    <td>{{ i.date }}</td>
+
+
+
+
+<td></td>
+
+
+                                </tr>
+
+
+              {% endfor %}
+
+
+
+                            </table>
+
+      <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+
+  {% endblock %}
